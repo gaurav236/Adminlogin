@@ -12,4 +12,8 @@ public interface Adminservice {
 
 	public Admin getAdmin(int id);
 
+	public String deleteData(int id);
+
+	public String updateAdmin(Admin a);
+
 }

@@ -38,4 +38,23 @@ public class Adminserviceimpl implements Adminservice {
 
 	}
 
+	@Override
+	public String deleteData(int id) {
+		Optional<Admin> a = ar.findById(id);
+		if (a.isPresent()) {
+			ar.deleteById(id);
+			return "data deleted successfully";
+
+		} else {
+			return "record is not present";
+		}
+
+	}
+
+	@Override
+	public String updateAdmin(Admin a) {
+		ar.save(a);
+		return "data updated successfully";
+	}
+
 }
